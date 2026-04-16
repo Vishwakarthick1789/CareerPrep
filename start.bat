@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 echo ========================================================
 echo Starting CareerPrep Application
 echo ========================================================
@@ -32,6 +33,9 @@ start "CareerPrep Frontend" cmd /k "npm run dev"
 
 echo.
 echo Both servers are starting up!
-echo The frontend will be available at http://localhost:5173
+echo Opening browser...
+timeout /t 3 /nobreak > nul
+start http://localhost:5173
+
 echo.
 pause
