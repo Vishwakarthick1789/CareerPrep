@@ -14,12 +14,21 @@ A professional two-pane web app: **match your resume to a job description** with
 
 ## Quick start
 
+The **easiest way** to run the app on Windows is to double-click the `start.bat` file in the project folder. It will automatically set up the Python venv, install NPM packages, and start both the frontend and backend servers, avoiding common Windows script execution errors.
+
+Alternatively, you can run them manually:
+
 ### 1. Backend
 
 ```powershell
 cd ResumeInterviewPro\backend
 python -m venv .venv
+
+# If using Command Prompt:
+.\.venv\Scripts\activate.bat
+# If using PowerShell (requires ExecutionPolicy to allow scripts):
 .\.venv\Scripts\Activate.ps1
+
 pip install -r requirements.txt
 copy .env.example .env
 # Optional: set OPENAI_API_KEY in .env
