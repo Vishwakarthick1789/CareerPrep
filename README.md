@@ -14,14 +14,21 @@ A professional two-pane web app: **match your resume to a job description** with
 
 ## Quick start
 
-The **easiest way** to run the app on Windows is to double-click the `start.bat` file in the project folder. It will automatically set up the Python venv, install NPM packages, and start both the frontend and backend servers, avoiding common Windows script execution errors.
+The **easiest and officially supported way** to run the app on Windows is to simply double-click the `start.bat` file located in the project folder. 
 
-Alternatively, you can run them manually:
+`start.bat` handles everything for you automatically:
+- Creates a Python virtual environment (`.venv`) and installs backend dependencies.
+- Installs all frontend node modules.
+- Starts both the frontend and backend servers asynchronously.
+- **Automatically opens your browser to http://localhost:5173** once the servers are launching.
+
+Alternatively, you can run the services manually from the terminal:
 
 ### 1. Backend
 
 ```powershell
-cd ResumeInterviewPro\backend
+# From the project root directory
+cd backend
 python -m venv .venv
 
 # If using Command Prompt:
@@ -32,18 +39,20 @@ python -m venv .venv
 pip install -r requirements.txt
 copy .env.example .env
 # Optional: set OPENAI_API_KEY in .env
+
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 ### 2. Frontend
 
 ```powershell
-cd ResumeInterviewPro\frontend
+# From the project root directory
+cd frontend
 npm install
 npm run dev
 ```
 
-Open **http://127.0.0.1:5173**. The dev server proxies `/api` to the backend on port **8000**.
+Open **http://127.0.0.1:5173**. The dev server proxies `/api` requests automatically to the local backend on port **8000**.
 
 ### Production build (frontend)
 
