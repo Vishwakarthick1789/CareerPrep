@@ -1,4 +1,4 @@
-# CareerPrep — ATS resume checker & interview practice
+# CareerPrep (Preparation) — ATS resume checker & interview practice
 
 A professional two-pane web app: **match your resume to a job description** with ATS-style heuristics, then **practice role-based interview questions** with structured or AI-powered feedback.
 
